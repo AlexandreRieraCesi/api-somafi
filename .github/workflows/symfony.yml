@@ -16,4 +16,4 @@ jobs:
       - name: "Going into api project folder"
         run: cd api
       - name: "Install all dependencies"
-        run: composer installer
+        run: composer install
