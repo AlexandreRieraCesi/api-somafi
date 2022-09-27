@@ -1,8 +1,5 @@
 name: "Build"
 
-stages:
-  - create
-
 on:
   push:
     branches: [ "main" ]
