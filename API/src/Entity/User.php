@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  */
+#[ApiResource]
+
 class User
 {
     /**
@@ -25,6 +28,7 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
      */
     private $password;
 
