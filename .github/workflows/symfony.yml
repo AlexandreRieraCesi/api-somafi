@@ -9,7 +9,7 @@ on:
 jobs:
   create:
     name: "Create new symfony project"
-    image: bitnami/symfony:1
+    runs-on: bitnami/symfony:1
     steps:
       - name: "Create api project"
         run: composer create-project symfony/skeleton api
