@@ -14,8 +14,8 @@ jobs:
       - name: "Create api project"
         run: composer create-project symfony/skeleton api
       - name: "Going into api project folder"
-        run: cd api
-      - name: "List all files and folders"
         run: ls
+        working-directory: api
       - name: "Install dependencies"
         run: composer install
+        working-directory: api
