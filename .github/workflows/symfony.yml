@@ -19,6 +19,9 @@ jobs:
       - name: "Install dependencies"
         run: composer install
         working-directory: api-somafi
+      - name: "Installing ORM"
+        run: composer require orm
+        working-directory: api-somafi
       - name: "Create entity User"
         run: php bin/console make:entity User
         working-directory: api-somafi
