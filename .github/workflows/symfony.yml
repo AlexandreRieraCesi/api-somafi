@@ -11,11 +11,14 @@ jobs:
     name: "Create new symfony project"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Create api project"
-        run: composer create-project symfony/skeleton api
-      - name: "Going into api project folder"
-        run: ls
-        working-directory: api
+      - name: "Create project"
+        run: composer create-project symfony/skeleton api-somafi
+      - name: "Install the maker bundle"
+        run: composer req symfony/maker-bundle --dev
+        working-directory: api-somafi
       - name: "Install dependencies"
         run: composer install
-        working-directory: api
+        working-directory: api-somafi
+      - name: "Create entity User"
+        run: php bin/console make:entity User
+        working-directory: api-somafi
