@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 /**
@@ -889,6 +890,1499 @@ class Facture
      * @ORM\Column(name="IPROFORMA", type="boolean", nullable=true)
      */
     private $iproforma = '0';
+
+    public function getIddelpmt(): ?string
+    {
+        return $this->iddelpmt;
+    }
+
+    public function setIddelpmt(?string $iddelpmt): self
+    {
+        $this->iddelpmt = $iddelpmt;
+
+        return $this;
+    }
+
+    public function getIdfacture(): ?string
+    {
+        return $this->idfacture;
+    }
+
+    public function getDtFacture(): ?\DateTimeInterface
+    {
+        return $this->dtFacture;
+    }
+
+    public function setDtFacture(?\DateTimeInterface $dtFacture): self
+    {
+        $this->dtFacture = $dtFacture;
+
+        return $this;
+    }
+
+    public function getMttTotalHt(): ?string
+    {
+        return $this->mttTotalHt;
+    }
+
+    public function setMttTotalHt(?string $mttTotalHt): self
+    {
+        $this->mttTotalHt = $mttTotalHt;
+
+        return $this;
+    }
+
+    public function getMttTotalTtc(): ?string
+    {
+        return $this->mttTotalTtc;
+    }
+
+    public function setMttTotalTtc(?string $mttTotalTtc): self
+    {
+        $this->mttTotalTtc = $mttTotalTtc;
+
+        return $this;
+    }
+
+    public function getIdcontact(): ?string
+    {
+        return $this->idcontact;
+    }
+
+    public function setIdcontact(?string $idcontact): self
+    {
+        $this->idcontact = $idcontact;
+
+        return $this;
+    }
+
+    public function getMttTotalTva(): ?string
+    {
+        return $this->mttTotalTva;
+    }
+
+    public function setMttTotalTva(?string $mttTotalTva): self
+    {
+        $this->mttTotalTva = $mttTotalTva;
+
+        return $this;
+    }
+
+    public function getMttRemise(): ?string
+    {
+        return $this->mttRemise;
+    }
+
+    public function setMttRemise(?string $mttRemise): self
+    {
+        $this->mttRemise = $mttRemise;
+
+        return $this;
+    }
+
+    public function getDtMulti(): ?\DateTimeInterface
+    {
+        return $this->dtMulti;
+    }
+
+    public function setDtMulti(?\DateTimeInterface $dtMulti): self
+    {
+        $this->dtMulti = $dtMulti;
+
+        return $this;
+    }
+
+    public function getAdresse1(): ?string
+    {
+        return $this->adresse1;
+    }
+
+    public function setAdresse1(?string $adresse1): self
+    {
+        $this->adresse1 = $adresse1;
+
+        return $this;
+    }
+
+    public function getDhcre(): ?\DateTimeInterface
+    {
+        return $this->dhcre;
+    }
+
+    public function setDhcre(?\DateTimeInterface $dhcre): self
+    {
+        $this->dhcre = $dhcre;
+
+        return $this;
+    }
+
+    public function getId2modePaiement(): ?int
+    {
+        return $this->id2modePaiement;
+    }
+
+    public function setId2modePaiement(?int $id2modePaiement): self
+    {
+        $this->id2modePaiement = $id2modePaiement;
+
+        return $this;
+    }
+
+    public function getNature(): ?string
+    {
+        return $this->nature;
+    }
+
+    public function setNature(?string $nature): self
+    {
+        $this->nature = $nature;
+
+        return $this;
+    }
+
+    public function getLibRemise(): ?string
+    {
+        return $this->libRemise;
+    }
+
+    public function setLibRemise(?string $libRemise): self
+    {
+        $this->libRemise = $libRemise;
+
+        return $this;
+    }
+
+    public function getDhmod(): ?\DateTimeInterface
+    {
+        return $this->dhmod;
+    }
+
+    public function setDhmod(?\DateTimeInterface $dhmod): self
+    {
+        $this->dhmod = $dhmod;
+
+        return $this;
+    }
+
+    public function getDtEcheance(): ?\DateTimeInterface
+    {
+        return $this->dtEcheance;
+    }
+
+    public function setDtEcheance(?\DateTimeInterface $dtEcheance): self
+    {
+        $this->dtEcheance = $dtEcheance;
+
+        return $this;
+    }
+
+    public function getNoteComplement(): ?string
+    {
+        return $this->noteComplement;
+    }
+
+    public function setNoteComplement(?string $noteComplement): self
+    {
+        $this->noteComplement = $noteComplement;
+
+        return $this;
+    }
+
+    public function getNomClient(): ?string
+    {
+        return $this->nomClient;
+    }
+
+    public function setNomClient(?string $nomClient): self
+    {
+        $this->nomClient = $nomClient;
+
+        return $this;
+    }
+
+    public function getRaisonSociale(): ?string
+    {
+        return $this->raisonSociale;
+    }
+
+    public function setRaisonSociale(?string $raisonSociale): self
+    {
+        $this->raisonSociale = $raisonSociale;
+
+        return $this;
+    }
+
+    public function isIgenfact(): ?bool
+    {
+        return $this->igenfact;
+    }
+
+    public function setIgenfact(?bool $igenfact): self
+    {
+        $this->igenfact = $igenfact;
+
+        return $this;
+    }
+
+    public function getUscre(): ?string
+    {
+        return $this->uscre;
+    }
+
+    public function setUscre(?string $uscre): self
+    {
+        $this->uscre = $uscre;
+
+        return $this;
+    }
+
+    public function getUsmod(): ?string
+    {
+        return $this->usmod;
+    }
+
+    public function setUsmod(?string $usmod): self
+    {
+        $this->usmod = $usmod;
+
+        return $this;
+    }
+
+    public function getCpostal(): ?string
+    {
+        return $this->cpostal;
+    }
+
+    public function setCpostal(?string $cpostal): self
+    {
+        $this->cpostal = $cpostal;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(?string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getCdpays(): ?string
+    {
+        return $this->cdpays;
+    }
+
+    public function setCdpays(?string $cdpays): self
+    {
+        $this->cdpays = $cdpays;
+
+        return $this;
+    }
+
+    public function getMttRegle(): ?string
+    {
+        return $this->mttRegle;
+    }
+
+    public function setMttRegle(?string $mttRegle): self
+    {
+        $this->mttRegle = $mttRegle;
+
+        return $this;
+    }
+
+    public function isItransmis(): ?bool
+    {
+        return $this->itransmis;
+    }
+
+    public function setItransmis(?bool $itransmis): self
+    {
+        $this->itransmis = $itransmis;
+
+        return $this;
+    }
+
+    public function getTxRemiseGlob(): ?float
+    {
+        return $this->txRemiseGlob;
+    }
+
+    public function setTxRemiseGlob(?float $txRemiseGlob): self
+    {
+        $this->txRemiseGlob = $txRemiseGlob;
+
+        return $this;
+    }
+
+    public function getCdDevise(): ?string
+    {
+        return $this->cdDevise;
+    }
+
+    public function setCdDevise(?string $cdDevise): self
+    {
+        $this->cdDevise = $cdDevise;
+
+        return $this;
+    }
+
+    public function getTxChange(): ?float
+    {
+        return $this->txChange;
+    }
+
+    public function setTxChange(?float $txChange): self
+    {
+        $this->txChange = $txChange;
+
+        return $this;
+    }
+
+    public function isIdestocke(): ?bool
+    {
+        return $this->idestocke;
+    }
+
+    public function setIdestocke(?bool $idestocke): self
+    {
+        $this->idestocke = $idestocke;
+
+        return $this;
+    }
+
+    public function isNbdecFacture(): ?bool
+    {
+        return $this->nbdecFacture;
+    }
+
+    public function setNbdecFacture(?bool $nbdecFacture): self
+    {
+        $this->nbdecFacture = $nbdecFacture;
+
+        return $this;
+    }
+
+    public function getCdLang(): ?int
+    {
+        return $this->cdLang;
+    }
+
+    public function setCdLang(?int $cdLang): self
+    {
+        $this->cdLang = $cdLang;
+
+        return $this;
+    }
+
+    public function getUsResp(): ?string
+    {
+        return $this->usResp;
+    }
+
+    public function setUsResp(?string $usResp): self
+    {
+        $this->usResp = $usResp;
+
+        return $this;
+    }
+
+    public function getVref(): ?string
+    {
+        return $this->vref;
+    }
+
+    public function setVref(?string $vref): self
+    {
+        $this->vref = $vref;
+
+        return $this;
+    }
+
+    public function getRefexterne(): ?string
+    {
+        return $this->refexterne;
+    }
+
+    public function setRefexterne(?string $refexterne): self
+    {
+        $this->refexterne = $refexterne;
+
+        return $this;
+    }
+
+    public function isIgenavoir(): ?bool
+    {
+        return $this->igenavoir;
+    }
+
+    public function setIgenavoir(?bool $igenavoir): self
+    {
+        $this->igenavoir = $igenavoir;
+
+        return $this;
+    }
+
+    public function isStatutFad(): ?bool
+    {
+        return $this->statutFad;
+    }
+
+    public function setStatutFad(?bool $statutFad): self
+    {
+        $this->statutFad = $statutFad;
+
+        return $this;
+    }
+
+    public function isIencours(): ?bool
+    {
+        return $this->iencours;
+    }
+
+    public function setIencours(?bool $iencours): self
+    {
+        $this->iencours = $iencours;
+
+        return $this;
+    }
+
+    public function getFadEntete(): ?int
+    {
+        return $this->fadEntete;
+    }
+
+    public function setFadEntete(?int $fadEntete): self
+    {
+        $this->fadEntete = $fadEntete;
+
+        return $this;
+    }
+
+    public function isFadImpsuivipar(): ?bool
+    {
+        return $this->fadImpsuivipar;
+    }
+
+    public function setFadImpsuivipar(?bool $fadImpsuivipar): self
+    {
+        $this->fadImpsuivipar = $fadImpsuivipar;
+
+        return $this;
+    }
+
+    public function getFadTrierligne(): ?int
+    {
+        return $this->fadTrierligne;
+    }
+
+    public function setFadTrierligne(?int $fadTrierligne): self
+    {
+        $this->fadTrierligne = $fadTrierligne;
+
+        return $this;
+    }
+
+    public function isFadSerrerligne(): ?bool
+    {
+        return $this->fadSerrerligne;
+    }
+
+    public function setFadSerrerligne(?bool $fadSerrerligne): self
+    {
+        $this->fadSerrerligne = $fadSerrerligne;
+
+        return $this;
+    }
+
+    public function getFadImpcdprod(): ?int
+    {
+        return $this->fadImpcdprod;
+    }
+
+    public function setFadImpcdprod(?int $fadImpcdprod): self
+    {
+        $this->fadImpcdprod = $fadImpcdprod;
+
+        return $this;
+    }
+
+    public function isFadImpcommentaires(): ?bool
+    {
+        return $this->fadImpcommentaires;
+    }
+
+    public function setFadImpcommentaires(?bool $fadImpcommentaires): self
+    {
+        $this->fadImpcommentaires = $fadImpcommentaires;
+
+        return $this;
+    }
+
+    public function isFadImpremise(): ?bool
+    {
+        return $this->fadImpremise;
+    }
+
+    public function setFadImpremise(?bool $fadImpremise): self
+    {
+        $this->fadImpremise = $fadImpremise;
+
+        return $this;
+    }
+
+    public function isFadImpunite(): ?bool
+    {
+        return $this->fadImpunite;
+    }
+
+    public function setFadImpunite(?bool $fadImpunite): self
+    {
+        $this->fadImpunite = $fadImpunite;
+
+        return $this;
+    }
+
+    public function getFadColsfacture(): ?int
+    {
+        return $this->fadColsfacture;
+    }
+
+    public function setFadColsfacture(?int $fadColsfacture): self
+    {
+        $this->fadColsfacture = $fadColsfacture;
+
+        return $this;
+    }
+
+    public function isFadImpnature(): ?bool
+    {
+        return $this->fadImpnature;
+    }
+
+    public function setFadImpnature(?bool $fadImpnature): self
+    {
+        $this->fadImpnature = $fadImpnature;
+
+        return $this;
+    }
+
+    public function getAdresse2(): ?string
+    {
+        return $this->adresse2;
+    }
+
+    public function setAdresse2(?string $adresse2): self
+    {
+        $this->adresse2 = $adresse2;
+
+        return $this;
+    }
+
+    public function isIgencomm(): ?bool
+    {
+        return $this->igencomm;
+    }
+
+    public function setIgencomm(?bool $igencomm): self
+    {
+        $this->igencomm = $igencomm;
+
+        return $this;
+    }
+
+    public function isIgenbl(): ?bool
+    {
+        return $this->igenbl;
+    }
+
+    public function setIgenbl(?bool $igenbl): self
+    {
+        $this->igenbl = $igenbl;
+
+        return $this;
+    }
+
+    public function getNoteHistorique(): ?string
+    {
+        return $this->noteHistorique;
+    }
+
+    public function setNoteHistorique(?string $noteHistorique): self
+    {
+        $this->noteHistorique = $noteHistorique;
+
+        return $this;
+    }
+
+    public function getStatutCde(): ?int
+    {
+        return $this->statutCde;
+    }
+
+    public function setStatutCde(?int $statutCde): self
+    {
+        $this->statutCde = $statutCde;
+
+        return $this;
+    }
+
+    public function getPoidsTotal(): ?float
+    {
+        return $this->poidsTotal;
+    }
+
+    public function setPoidsTotal(?float $poidsTotal): self
+    {
+        $this->poidsTotal = $poidsTotal;
+
+        return $this;
+    }
+
+    public function getNbColis(): ?int
+    {
+        return $this->nbColis;
+    }
+
+    public function setNbColis(?int $nbColis): self
+    {
+        $this->nbColis = $nbColis;
+
+        return $this;
+    }
+
+    public function getTransporteur(): ?string
+    {
+        return $this->transporteur;
+    }
+
+    public function setTransporteur(?string $transporteur): self
+    {
+        $this->transporteur = $transporteur;
+
+        return $this;
+    }
+
+    public function getNbPalettes(): ?int
+    {
+        return $this->nbPalettes;
+    }
+
+    public function setNbPalettes(?int $nbPalettes): self
+    {
+        $this->nbPalettes = $nbPalettes;
+
+        return $this;
+    }
+
+    public function getVolumeExped(): ?float
+    {
+        return $this->volumeExped;
+    }
+
+    public function setVolumeExped(?float $volumeExped): self
+    {
+        $this->volumeExped = $volumeExped;
+
+        return $this;
+    }
+
+    public function getReforig(): ?string
+    {
+        return $this->reforig;
+    }
+
+    public function setReforig(?string $reforig): self
+    {
+        $this->reforig = $reforig;
+
+        return $this;
+    }
+
+    public function getMttTimbre(): ?string
+    {
+        return $this->mttTimbre;
+    }
+
+    public function setMttTimbre(?string $mttTimbre): self
+    {
+        $this->mttTimbre = $mttTimbre;
+
+        return $this;
+    }
+
+    public function isFadImpfax(): ?bool
+    {
+        return $this->fadImpfax;
+    }
+
+    public function setFadImpfax(?bool $fadImpfax): self
+    {
+        $this->fadImpfax = $fadImpfax;
+
+        return $this;
+    }
+
+    public function getMttRemiseligne(): ?string
+    {
+        return $this->mttRemiseligne;
+    }
+
+    public function setMttRemiseligne(?string $mttRemiseligne): self
+    {
+        $this->mttRemiseligne = $mttRemiseligne;
+
+        return $this;
+    }
+
+    public function isIgencommfou(): ?bool
+    {
+        return $this->igencommfou;
+    }
+
+    public function setIgencommfou(?bool $igencommfou): self
+    {
+        $this->igencommfou = $igencommfou;
+
+        return $this;
+    }
+
+    public function getIdimputation(): ?string
+    {
+        return $this->idimputation;
+    }
+
+    public function setIdimputation(?string $idimputation): self
+    {
+        $this->idimputation = $idimputation;
+
+        return $this;
+    }
+
+    public function getDtExport(): ?\DateTimeInterface
+    {
+        return $this->dtExport;
+    }
+
+    public function setDtExport(?\DateTimeInterface $dtExport): self
+    {
+        $this->dtExport = $dtExport;
+
+        return $this;
+    }
+
+    public function isFadImpdetail(): ?bool
+    {
+        return $this->fadImpdetail;
+    }
+
+    public function setFadImpdetail(?bool $fadImpdetail): self
+    {
+        $this->fadImpdetail = $fadImpdetail;
+
+        return $this;
+    }
+
+    public function getDtDernierRappel(): ?\DateTimeInterface
+    {
+        return $this->dtDernierRappel;
+    }
+
+    public function setDtDernierRappel(?\DateTimeInterface $dtDernierRappel): self
+    {
+        $this->dtDernierRappel = $dtDernierRappel;
+
+        return $this;
+    }
+
+    public function getTxtaxCanada(): ?float
+    {
+        return $this->txtaxCanada;
+    }
+
+    public function setTxtaxCanada(?float $txtaxCanada): self
+    {
+        $this->txtaxCanada = $txtaxCanada;
+
+        return $this;
+    }
+
+    public function getMttSoldeTtc(): ?string
+    {
+        return $this->mttSoldeTtc;
+    }
+
+    public function setMttSoldeTtc(?string $mttSoldeTtc): self
+    {
+        $this->mttSoldeTtc = $mttSoldeTtc;
+
+        return $this;
+    }
+
+    public function getIdcontactLivr(): ?string
+    {
+        return $this->idcontactLivr;
+    }
+
+    public function setIdcontactLivr(?string $idcontactLivr): self
+    {
+        $this->idcontactLivr = $idcontactLivr;
+
+        return $this;
+    }
+
+    public function getMttMargeHt(): ?string
+    {
+        return $this->mttMargeHt;
+    }
+
+    public function setMttMargeHt(?string $mttMargeHt): self
+    {
+        $this->mttMargeHt = $mttMargeHt;
+
+        return $this;
+    }
+
+    public function getIdprojet(): ?string
+    {
+        return $this->idprojet;
+    }
+
+    public function setIdprojet(?string $idprojet): self
+    {
+        $this->idprojet = $idprojet;
+
+        return $this;
+    }
+
+    public function getIdtache(): ?string
+    {
+        return $this->idtache;
+    }
+
+    public function setIdtache(?string $idtache): self
+    {
+        $this->idtache = $idtache;
+
+        return $this;
+    }
+
+    public function getCleMachineCible(): ?string
+    {
+        return $this->cleMachineCible;
+    }
+
+    public function setCleMachineCible(?string $cleMachineCible): self
+    {
+        $this->cleMachineCible = $cleMachineCible;
+
+        return $this;
+    }
+
+    public function isNbRappels(): ?bool
+    {
+        return $this->nbRappels;
+    }
+
+    public function setNbRappels(?bool $nbRappels): self
+    {
+        $this->nbRappels = $nbRappels;
+
+        return $this;
+    }
+
+    public function getMttFraisCompl(): ?string
+    {
+        return $this->mttFraisCompl;
+    }
+
+    public function setMttFraisCompl(?string $mttFraisCompl): self
+    {
+        $this->mttFraisCompl = $mttFraisCompl;
+
+        return $this;
+    }
+
+    public function getIddocument(): ?int
+    {
+        return $this->iddocument;
+    }
+
+    public function setIddocument(?int $iddocument): self
+    {
+        $this->iddocument = $iddocument;
+
+        return $this;
+    }
+
+    public function getDtCompta(): ?\DateTimeInterface
+    {
+        return $this->dtCompta;
+    }
+
+    public function setDtCompta(?\DateTimeInterface $dtCompta): self
+    {
+        $this->dtCompta = $dtCompta;
+
+        return $this;
+    }
+
+    public function isId2originePiece(): ?bool
+    {
+        return $this->id2originePiece;
+    }
+
+    public function setId2originePiece(?bool $id2originePiece): self
+    {
+        $this->id2originePiece = $id2originePiece;
+
+        return $this;
+    }
+
+    public function isId2modeLivr(): ?bool
+    {
+        return $this->id2modeLivr;
+    }
+
+    public function setId2modeLivr(?bool $id2modeLivr): self
+    {
+        $this->id2modeLivr = $id2modeLivr;
+
+        return $this;
+    }
+
+    public function getMttDeee(): ?string
+    {
+        return $this->mttDeee;
+    }
+
+    public function setMttDeee(?string $mttDeee): self
+    {
+        $this->mttDeee = $mttDeee;
+
+        return $this;
+    }
+
+    public function isFadSanstotal(): ?bool
+    {
+        return $this->fadSanstotal;
+    }
+
+    public function setFadSanstotal(?bool $fadSanstotal): self
+    {
+        $this->fadSanstotal = $fadSanstotal;
+
+        return $this;
+    }
+
+    public function getClePieceOrig(): ?string
+    {
+        return $this->clePieceOrig;
+    }
+
+    public function setClePieceOrig(?string $clePieceOrig): self
+    {
+        $this->clePieceOrig = $clePieceOrig;
+
+        return $this;
+    }
+
+    public function getNoteAvant(): ?string
+    {
+        return $this->noteAvant;
+    }
+
+    public function setNoteAvant(?string $noteAvant): self
+    {
+        $this->noteAvant = $noteAvant;
+
+        return $this;
+    }
+
+    public function getNoteApres(): ?string
+    {
+        return $this->noteApres;
+    }
+
+    public function setNoteApres(?string $noteApres): self
+    {
+        $this->noteApres = $noteApres;
+
+        return $this;
+    }
+
+    public function getNotePiece(): ?string
+    {
+        return $this->notePiece;
+    }
+
+    public function setNotePiece(?string $notePiece): self
+    {
+        $this->notePiece = $notePiece;
+
+        return $this;
+    }
+
+    public function getFadSstotal(): ?int
+    {
+        return $this->fadSstotal;
+    }
+
+    public function setFadSstotal(?int $fadSstotal): self
+    {
+        $this->fadSstotal = $fadSstotal;
+
+        return $this;
+    }
+
+    public function getMttTax1(): ?string
+    {
+        return $this->mttTax1;
+    }
+
+    public function setMttTax1(?string $mttTax1): self
+    {
+        $this->mttTax1 = $mttTax1;
+
+        return $this;
+    }
+
+    public function getMttTax2(): ?string
+    {
+        return $this->mttTax2;
+    }
+
+    public function setMttTax2(?string $mttTax2): self
+    {
+        $this->mttTax2 = $mttTax2;
+
+        return $this;
+    }
+
+    public function getCdAction(): ?string
+    {
+        return $this->cdAction;
+    }
+
+    public function setCdAction(?string $cdAction): self
+    {
+        $this->cdAction = $cdAction;
+
+        return $this;
+    }
+
+    public function getIdorig(): ?string
+    {
+        return $this->idorig;
+    }
+
+    public function setIdorig(?string $idorig): self
+    {
+        $this->idorig = $idorig;
+
+        return $this;
+    }
+
+    public function getMttTrspt(): ?string
+    {
+        return $this->mttTrspt;
+    }
+
+    public function setMttTrspt(?string $mttTrspt): self
+    {
+        $this->mttTrspt = $mttTrspt;
+
+        return $this;
+    }
+
+    public function getIncoterm(): ?string
+    {
+        return $this->incoterm;
+    }
+
+    public function setIncoterm(?string $incoterm): self
+    {
+        $this->incoterm = $incoterm;
+
+        return $this;
+    }
+
+    public function getLibTrspt(): ?string
+    {
+        return $this->libTrspt;
+    }
+
+    public function setLibTrspt(?string $libTrspt): self
+    {
+        $this->libTrspt = $libTrspt;
+
+        return $this;
+    }
+
+    public function getId2motifRejet(): ?int
+    {
+        return $this->id2motifRejet;
+    }
+
+    public function setId2motifRejet(?int $id2motifRejet): self
+    {
+        $this->id2motifRejet = $id2motifRejet;
+
+        return $this;
+    }
+
+    public function getIdadressepost1(): ?string
+    {
+        return $this->idadressepost1;
+    }
+
+    public function setIdadressepost1(?string $idadressepost1): self
+    {
+        $this->idadressepost1 = $idadressepost1;
+
+        return $this;
+    }
+
+    public function getIdadressepost2(): ?string
+    {
+        return $this->idadressepost2;
+    }
+
+    public function setIdadressepost2(?string $idadressepost2): self
+    {
+        $this->idadressepost2 = $idadressepost2;
+
+        return $this;
+    }
+
+    public function getMttRetgar(): ?string
+    {
+        return $this->mttRetgar;
+    }
+
+    public function setMttRetgar(?string $mttRetgar): self
+    {
+        $this->mttRetgar = $mttRetgar;
+
+        return $this;
+    }
+
+    public function getDtAvancement(): ?\DateTimeInterface
+    {
+        return $this->dtAvancement;
+    }
+
+    public function setDtAvancement(?\DateTimeInterface $dtAvancement): self
+    {
+        $this->dtAvancement = $dtAvancement;
+
+        return $this;
+    }
+
+    public function getPctAvancement(): ?float
+    {
+        return $this->pctAvancement;
+    }
+
+    public function setPctAvancement(?float $pctAvancement): self
+    {
+        $this->pctAvancement = $pctAvancement;
+
+        return $this;
+    }
+
+    public function isTypFacture(): ?bool
+    {
+        return $this->typFacture;
+    }
+
+    public function setTypFacture(?bool $typFacture): self
+    {
+        $this->typFacture = $typFacture;
+
+        return $this;
+    }
+
+    public function getIdtarif(): ?string
+    {
+        return $this->idtarif;
+    }
+
+    public function setIdtarif(?string $idtarif): self
+    {
+        $this->idtarif = $idtarif;
+
+        return $this;
+    }
+
+    public function isIventecaisse(): ?bool
+    {
+        return $this->iventecaisse;
+    }
+
+    public function setIventecaisse(?bool $iventecaisse): self
+    {
+        $this->iventecaisse = $iventecaisse;
+
+        return $this;
+    }
+
+    public function getCdregion(): ?string
+    {
+        return $this->cdregion;
+    }
+
+    public function setCdregion(?string $cdregion): self
+    {
+        $this->cdregion = $cdregion;
+
+        return $this;
+    }
+
+    public function getUsTech(): ?string
+    {
+        return $this->usTech;
+    }
+
+    public function setUsTech(?string $usTech): self
+    {
+        $this->usTech = $usTech;
+
+        return $this;
+    }
+
+    public function getIdadrchantier(): ?string
+    {
+        return $this->idadrchantier;
+    }
+
+    public function setIdadrchantier(?string $idadrchantier): self
+    {
+        $this->idadrchantier = $idadrchantier;
+
+        return $this;
+    }
+
+    public function getPoidsSup(): ?float
+    {
+        return $this->poidsSup;
+    }
+
+    public function setPoidsSup(?float $poidsSup): self
+    {
+        $this->poidsSup = $poidsSup;
+
+        return $this;
+    }
+
+    public function isStStock(): ?bool
+    {
+        return $this->stStock;
+    }
+
+    public function setStStock(?bool $stStock): self
+    {
+        $this->stStock = $stStock;
+
+        return $this;
+    }
+
+    public function isId2regAutoliquid(): ?bool
+    {
+        return $this->id2regAutoliquid;
+    }
+
+    public function setId2regAutoliquid(?bool $id2regAutoliquid): self
+    {
+        $this->id2regAutoliquid = $id2regAutoliquid;
+
+        return $this;
+    }
+
+    public function isFadTyptotalgen(): ?bool
+    {
+        return $this->fadTyptotalgen;
+    }
+
+    public function setFadTyptotalgen(?bool $fadTyptotalgen): self
+    {
+        $this->fadTyptotalgen = $fadTyptotalgen;
+
+        return $this;
+    }
+
+    public function getIdidentcom(): ?string
+    {
+        return $this->ididentcom;
+    }
+
+    public function setIdidentcom(?string $ididentcom): self
+    {
+        $this->ididentcom = $ididentcom;
+
+        return $this;
+    }
+
+    public function getSignatureClt()
+    {
+        return $this->signatureClt;
+    }
+
+    public function setSignatureClt($signatureClt): self
+    {
+        $this->signatureClt = $signatureClt;
+
+        return $this;
+    }
+
+    public function getSignatureTech()
+    {
+        return $this->signatureTech;
+    }
+
+    public function setSignatureTech($signatureTech): self
+    {
+        $this->signatureTech = $signatureTech;
+
+        return $this;
+    }
+
+    public function getAuthkey(): ?string
+    {
+        return $this->authkey;
+    }
+
+    public function setAuthkey(?string $authkey): self
+    {
+        $this->authkey = $authkey;
+
+        return $this;
+    }
+
+    public function getNumtracking(): ?string
+    {
+        return $this->numtracking;
+    }
+
+    public function setNumtracking(?string $numtracking): self
+    {
+        $this->numtracking = $numtracking;
+
+        return $this;
+    }
+
+    public function getDtExped(): ?\DateTimeInterface
+    {
+        return $this->dtExped;
+    }
+
+    public function setDtExped(?\DateTimeInterface $dtExped): self
+    {
+        $this->dtExped = $dtExped;
+
+        return $this;
+    }
+
+    public function getIdctcapp(): ?string
+    {
+        return $this->idctcapp;
+    }
+
+    public function setIdctcapp(?string $idctcapp): self
+    {
+        $this->idctcapp = $idctcapp;
+
+        return $this;
+    }
+
+    public function isStEncaissement(): ?bool
+    {
+        return $this->stEncaissement;
+    }
+
+    public function setStEncaissement(?bool $stEncaissement): self
+    {
+        $this->stEncaissement = $stEncaissement;
+
+        return $this;
+    }
+
+    public function getInfotech(): ?string
+    {
+        return $this->infotech;
+    }
+
+    public function setInfotech(?string $infotech): self
+    {
+        $this->infotech = $infotech;
+
+        return $this;
+    }
+
+    public function getUsdefLib(): ?string
+    {
+        return $this->usdefLib;
+    }
+
+    public function setUsdefLib(?string $usdefLib): self
+    {
+        $this->usdefLib = $usdefLib;
+
+        return $this;
+    }
+
+    public function isIgmob1(): ?bool
+    {
+        return $this->igmob1;
+    }
+
+    public function setIgmob1(?bool $igmob1): self
+    {
+        $this->igmob1 = $igmob1;
+
+        return $this;
+    }
+
+    public function getNbpoints(): ?int
+    {
+        return $this->nbpoints;
+    }
+
+    public function setNbpoints(?int $nbpoints): self
+    {
+        $this->nbpoints = $nbpoints;
+
+        return $this;
+    }
+
+    public function isId2statImpaye(): ?bool
+    {
+        return $this->id2statImpaye;
+    }
+
+    public function setId2statImpaye(?bool $id2statImpaye): self
+    {
+        $this->id2statImpaye = $id2statImpaye;
+
+        return $this;
+    }
+
+    public function isIproforma(): ?bool
+    {
+        return $this->iproforma;
+    }
+
+    public function setIproforma(?bool $iproforma): self
+    {
+        $this->iproforma = $iproforma;
+
+        return $this;
+    }
 
 
 }
