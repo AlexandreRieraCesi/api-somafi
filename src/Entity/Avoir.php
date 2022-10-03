@@ -5,14 +5,18 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
-
+use ApiPlatform\Metadata\Get;
 /**
  * Avoir
  *
  * @ORM\Table(name="avoir", indexes={@ORM\Index(name="CC_CT_ID", columns={"IDCONTACT", "IDFACTURE"}), @ORM\Index(name="CC_CT_STAT", columns={"IDCONTACT", "STATUT_FAD"}), @ORM\Index(name="CC_DT_NUM", columns={"DT_FACTURE", "IDFACTURE"}), @ORM\Index(name="CC_IDORIGCRE", columns={"IDORIG", "DHCRE"}), @ORM\Index(name="CC_NUM_DT", columns={"IDFACTURE", "DT_FACTURE"}), @ORM\Index(name="WDIDX16334215680", columns={"IDDELPMT"}), @ORM\Index(name="WDIDX16334215681", columns={"DT_FACTURE"}), @ORM\Index(name="WDIDX163342156810", columns={"VILLE"}), @ORM\Index(name="WDIDX163342156811", columns={"STATUT_FAD"}), @ORM\Index(name="WDIDX163342156812", columns={"REFORIG"}), @ORM\Index(name="WDIDX163342156813", columns={"IDIMPUTATION"}), @ORM\Index(name="WDIDX16334215682", columns={"MTT_TOTAL_TTC"}), @ORM\Index(name="WDIDX16334215683", columns={"IDCONTACT"}), @ORM\Index(name="WDIDX16334215684", columns={"DT_MULTI"}), @ORM\Index(name="WDIDX16334215685", columns={"DHCRE"}), @ORM\Index(name="WDIDX16334215686", columns={"NATURE"}), @ORM\Index(name="WDIDX16334215687", columns={"DT_ECHEANCE"}), @ORM\Index(name="WDIDX16334215688", columns={"NOM_CLIENT"}), @ORM\Index(name="WDIDX16334215689", columns={"RAISON_SOCIALE"}), @ORM\Index(name="WDIDX163342156914", columns={"IDPROJET"}), @ORM\Index(name="WDIDX163342156915", columns={"IDTACHE"}), @ORM\Index(name="WDIDX163342156916", columns={"CLE_MACHINE_CIBLE"}), @ORM\Index(name="WDIDX163342156917", columns={"CLE_PIECE_ORIG"})})
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/avoirs'
+    )
+])]
 class Avoir
 {
     /**

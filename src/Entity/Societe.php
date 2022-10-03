@@ -5,14 +5,18 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
-
+use ApiPlatform\Metadata\Get;
 /**
  * Societe
  *
  * @ORM\Table(name="societe", indexes={@ORM\Index(name="CC_FOUR_RAIS", columns={"IFOURNISSEUR", "RAISON_SOCIALE"}), @ORM\Index(name="WDIDX1616756054561", columns={"RAISON_SOCIALE"}), @ORM\Index(name="WDIDX1616756054562", columns={"CPOSTALP"}), @ORM\Index(name="WDIDX1616756054563", columns={"VILLEP"}), @ORM\Index(name="WDIDX1616756054564", columns={"CDPAYSP"}), @ORM\Index(name="WDIDX1616756054565", columns={"IDCONTACT_CDE"})})
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/societes'
+    )
+])]
 class Societe
 {
     /**

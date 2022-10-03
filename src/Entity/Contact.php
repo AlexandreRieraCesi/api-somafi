@@ -5,13 +5,21 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
 /**
  * Contact
  *
  * @ORM\Table(name="contact", indexes={@ORM\Index(name="CC_AR_NOMCL", columns={"IARCHIVE", "NOMCLAS"}), @ORM\Index(name="CC_IDORIGCRE", columns={"IDORIG", "DHCRE"}), @ORM\Index(name="CC_NOMPRENOM", columns={"NOMFAMILLE", "PRENOM"}), @ORM\Index(name="CC_US_NOMCL", columns={"USCRE", "NOMCLAS"}), @ORM\Index(name="CC_US_RSN", columns={"USCRE", "RAISON_SOCIALE"}), @ORM\Index(name="WDIDX1616747577225", columns={"NOMFAMILLE"}), @ORM\Index(name="WDIDX1616747577226", columns={"NOMCLAS"}), @ORM\Index(name="WDIDX1616747577227", columns={"IDSOCIETE"}), @ORM\Index(name="WDIDX1616747577228", columns={"QT_PRO"}), @ORM\Index(name="WDIDX1616747577229", columns={"DHCRE"}), @ORM\Index(name="WDIDX1616747577230", columns={"DHMOD"}), @ORM\Index(name="WDIDX1616747577231", columns={"RAISON_SOCIALE"}), @ORM\Index(name="WDIDX1616747577232", columns={"CDPAYS"}), @ORM\Index(name="WDIDX1616747577233", columns={"CPOSTAL"}), @ORM\Index(name="WDIDX1616747577234", columns={"VILLE"}), @ORM\Index(name="WDIDX1616747577235", columns={"EMAIL"}), @ORM\Index(name="WDIDX1616747577236", columns={"CDPAYSP"}), @ORM\Index(name="WDIDX1616747577237", columns={"CPOSTALP"}), @ORM\Index(name="WDIDX1616747577238", columns={"VILLEP"}), @ORM\Index(name="WDIDX1616747577239", columns={"EMAILP"}), @ORM\Index(name="WDIDX1616747577240", columns={"SECTEUR_PRO"}), @ORM\Index(name="WDIDX1616747577241", columns={"ID2GENRE_CONTACT"}), @ORM\Index(name="WDIDX1616747577242", columns={"REFEXTERNE"}), @ORM\Index(name="WDIDX1616747577243", columns={"LOGIN"}), @ORM\Index(name="WDIDX1616747577244", columns={"TELRECH"}), @ORM\Index(name="WDIDX1616747577245", columns={"IDFIDEL"})})
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/contacts'
+    ),
+    new Get(
+        uriTemplate: '/contacts/{id}'
+    )
+])]
 class Contact
 {
     /**

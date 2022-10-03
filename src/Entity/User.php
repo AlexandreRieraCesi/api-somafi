@@ -4,14 +4,21 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
-
+use ApiPlatform\Metadata\Get;
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/users'
+    ),
+    new Get(
+        uriTemplate: '/users/{id}'
+    )
+])]
 class User
 {
     /**

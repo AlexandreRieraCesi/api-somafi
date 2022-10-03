@@ -5,13 +5,18 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
 /**
  * Commande
  *
  * @ORM\Table(name="commande", indexes={@ORM\Index(name="CC_CT_ID", columns={"IDCONTACT", "IDFACTURE"}), @ORM\Index(name="CC_CT_STAT", columns={"IDCONTACT", "STATUT_FAD"}), @ORM\Index(name="CC_DT_NUM", columns={"DT_FACTURE", "IDFACTURE"}), @ORM\Index(name="CC_IDORIGCRE", columns={"IDORIG", "DHCRE"}), @ORM\Index(name="CC_NUM_DT", columns={"IDFACTURE", "DT_FACTURE"}), @ORM\Index(name="WDIDX16599769590", columns={"IDDELPMT"}), @ORM\Index(name="WDIDX16599769591", columns={"DT_FACTURE"}), @ORM\Index(name="WDIDX165997695910", columns={"VILLE"}), @ORM\Index(name="WDIDX165997695911", columns={"STATUT_FAD"}), @ORM\Index(name="WDIDX165997695912", columns={"REFORIG"}), @ORM\Index(name="WDIDX165997695913", columns={"IDIMPUTATION"}), @ORM\Index(name="WDIDX165997695914", columns={"IDPROJET"}), @ORM\Index(name="WDIDX165997695915", columns={"IDTACHE"}), @ORM\Index(name="WDIDX165997695916", columns={"CLE_MACHINE_CIBLE"}), @ORM\Index(name="WDIDX165997695917", columns={"CLE_PIECE_ORIG"}), @ORM\Index(name="WDIDX16599769592", columns={"MTT_TOTAL_TTC"}), @ORM\Index(name="WDIDX16599769593", columns={"IDCONTACT"}), @ORM\Index(name="WDIDX16599769594", columns={"DT_MULTI"}), @ORM\Index(name="WDIDX16599769595", columns={"DHCRE"}), @ORM\Index(name="WDIDX16599769596", columns={"NATURE"}), @ORM\Index(name="WDIDX16599769597", columns={"DT_ECHEANCE"}), @ORM\Index(name="WDIDX16599769598", columns={"NOM_CLIENT"}), @ORM\Index(name="WDIDX16599769599", columns={"RAISON_SOCIALE"})})
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/commandes'
+    )
+])]
 class Commande
 {
     /**

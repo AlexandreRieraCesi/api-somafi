@@ -5,13 +5,18 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
 /**
  * Facture
  *
  * @ORM\Table(name="facture", indexes={@ORM\Index(name="CC_CT_ID", columns={"IDCONTACT", "IDFACTURE"}), @ORM\Index(name="CC_CT_STAT", columns={"IDCONTACT", "STATUT_FAD"}), @ORM\Index(name="CC_DT_NUM", columns={"DT_FACTURE", "IDFACTURE"}), @ORM\Index(name="CC_IDORIGCRE", columns={"IDORIG", "DHCRE"}), @ORM\Index(name="CC_NUM_DT", columns={"IDFACTURE", "DT_FACTURE"}), @ORM\Index(name="WDIDX1616752051356", columns={"IDDELPMT"}), @ORM\Index(name="WDIDX1616752051357", columns={"DT_FACTURE"}), @ORM\Index(name="WDIDX1616752051358", columns={"MTT_TOTAL_TTC"}), @ORM\Index(name="WDIDX1616752051359", columns={"IDCONTACT"}), @ORM\Index(name="WDIDX1616752051360", columns={"DT_MULTI"}), @ORM\Index(name="WDIDX1616752051361", columns={"DHCRE"}), @ORM\Index(name="WDIDX1616752051362", columns={"NATURE"}), @ORM\Index(name="WDIDX1616752051363", columns={"DT_ECHEANCE"}), @ORM\Index(name="WDIDX1616752051364", columns={"NOM_CLIENT"}), @ORM\Index(name="WDIDX1616752051365", columns={"RAISON_SOCIALE"}), @ORM\Index(name="WDIDX1616752051366", columns={"VILLE"}), @ORM\Index(name="WDIDX1616752051367", columns={"STATUT_FAD"}), @ORM\Index(name="WDIDX1616752051368", columns={"REFORIG"}), @ORM\Index(name="WDIDX1616752051369", columns={"IDIMPUTATION"}), @ORM\Index(name="WDIDX1616752051370", columns={"IDPROJET"}), @ORM\Index(name="WDIDX1616752051371", columns={"IDTACHE"}), @ORM\Index(name="WDIDX1616752051372", columns={"CLE_MACHINE_CIBLE"}), @ORM\Index(name="WDIDX1616752051373", columns={"CLE_PIECE_ORIG"})})
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/factures'
+    )
+])]
 class Facture
 {
     /**

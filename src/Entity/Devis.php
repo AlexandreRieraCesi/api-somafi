@@ -5,13 +5,18 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
 /**
  * Devis
  *
  * @ORM\Table(name="devis", indexes={@ORM\Index(name="CC_CT_ID", columns={"IDCONTACT", "IDFACTURE"}), @ORM\Index(name="CC_CT_STAT", columns={"IDCONTACT", "STATUT_FAD"}), @ORM\Index(name="CC_DT_NUM", columns={"DT_FACTURE", "IDFACTURE"}), @ORM\Index(name="CC_IDORIGCRE", columns={"IDORIG", "DHCRE"}), @ORM\Index(name="CC_NUM_DT", columns={"IDFACTURE", "DT_FACTURE"}), @ORM\Index(name="WDIDX16607209810", columns={"IDDELPMT"}), @ORM\Index(name="WDIDX16607209811", columns={"DT_FACTURE"}), @ORM\Index(name="WDIDX166072098110", columns={"VILLE"}), @ORM\Index(name="WDIDX166072098111", columns={"STATUT_FAD"}), @ORM\Index(name="WDIDX166072098112", columns={"REFORIG"}), @ORM\Index(name="WDIDX166072098113", columns={"IDIMPUTATION"}), @ORM\Index(name="WDIDX166072098114", columns={"IDPROJET"}), @ORM\Index(name="WDIDX166072098115", columns={"IDTACHE"}), @ORM\Index(name="WDIDX166072098116", columns={"CLE_MACHINE_CIBLE"}), @ORM\Index(name="WDIDX166072098117", columns={"CLE_PIECE_ORIG"}), @ORM\Index(name="WDIDX16607209812", columns={"MTT_TOTAL_TTC"}), @ORM\Index(name="WDIDX16607209813", columns={"IDCONTACT"}), @ORM\Index(name="WDIDX16607209814", columns={"DT_MULTI"}), @ORM\Index(name="WDIDX16607209815", columns={"DHCRE"}), @ORM\Index(name="WDIDX16607209816", columns={"NATURE"}), @ORM\Index(name="WDIDX16607209817", columns={"DT_ECHEANCE"}), @ORM\Index(name="WDIDX16607209818", columns={"NOM_CLIENT"}), @ORM\Index(name="WDIDX16607209819", columns={"RAISON_SOCIALE"})})
  * @ORM\Entity
  */
-#[ApiResource()]
+#[ApiResource(operations: [
+    new Get(
+        uriTemplate: '/devis'
+    )
+])]
 class Devis
 {
     /**
