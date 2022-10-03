@@ -3,7 +3,7 @@
 /.env.local
 /.env.local.php
 /.env.*.local
-/.env
+#/.env
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
@@ -21,5 +21,5 @@
 ###< symfony/phpunit-bridge ###
 
 ###> sonar configuration ###
-/sonar-project.properties
+#/sonar-project.properties
 ###> sonar configuration ###
