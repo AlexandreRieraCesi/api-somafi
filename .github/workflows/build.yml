@@ -20,6 +20,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECTKEY: ${{ secrets.SONAR_PROJECTKEY }}  # Needed to get PR information, if any
+          SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
   tests:
       name: Run Unit Tests + test coverage
  
