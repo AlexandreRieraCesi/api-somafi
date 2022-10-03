@@ -19,3 +19,7 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> sonar configuration ###
+/sonar-project.properties
+###> sonar configuration ###
